@@ -10,7 +10,7 @@ from sklearn.cluster import KMeans
 st.title("ChurnGuard")
 st.write("Welcome! This App Predicts churn, shows customer segmentation, and explore data interactively.")
 
-df = pd.read_csv('telecomdata (1).csv')
+df = pd.read_csv('telecomdata.csv')
 df_copy = df.copy()
 
 binary_cols = []
