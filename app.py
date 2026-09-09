@@ -12,6 +12,7 @@ st.write("Welcome! This App Predicts churn, shows customer segmentation, and exp
 
 df = pd.read_csv('telecomdata.csv')
 df_copy = df.copy()
+df['TotalCharges'] = pd.to_numeric(df['TotalCharges'], errors='coerce')
 
 binary_cols = []
 multi_cols = []
