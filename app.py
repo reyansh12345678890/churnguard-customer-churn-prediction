@@ -30,7 +30,7 @@ df_encoded = pd.get_dummies(df, columns=multi_cols)
 
 X = df_encoded.drop(columns=['customerID', 'Churn'])
 X = X.apply(pd.to_numeric, errors='coerce')
-X = X.fillna(X.median())
+X = X.fillna(X.median()).fillna(0)
 y = df_encoded['Churn']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 model = LogisticRegression(max_iter=1000)
